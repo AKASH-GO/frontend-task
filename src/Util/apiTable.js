@@ -31,4 +31,4 @@ export const ApiTable = {
     },
 }
 export const METHOD = "get"
-export const BASEURL = "https://5729-2405-201-e015-b09c-fc83-94c9-905e-a111.ngrok-free.app/"
+export const BASEURL = "https://3231-2405-201-e015-b09c-84fc-770c-9cfd-f166.ngrok-free.app/"
