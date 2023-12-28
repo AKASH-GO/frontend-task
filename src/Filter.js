@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import Handleaxios from "./handleaxios";
 
 function Filter(props) {
-  const [filterData, setFilterData] = useState([]);
+    console.log(props,"props")
+  const [filterData, setFilterData] = useState();
 
   const fetchData = async () => {
     try {
-      let result = await Handleaxios("filter", null, props.item);
+      let result = await Handleaxios("filter", null, null,props.item);
       console.log("filter-result: ", result.data);
       setFilterData(result.data);
     } catch (error) {
@@ -34,49 +35,49 @@ function Filter(props) {
           </tr>
         </thead>
         <tbody>
-          {filterData?.map((filter, index) => (
-            <tr key={index} className="border-b border-black">
+          {/* {filterData?.map((filter, index) => ( */}
+            <tr  className="border-b border-black">
               <td className="border-r border-black p-2">
-                {filter.orgid !== null ? filter.orgid.toString() : "null"}
+                {filterData && filterData?.org_id !== null ?  filterData && filterData.org_id?.toString() : "null"}
               </td>
               <td className="border-r border-black p-2">
-                {filter.orderscount !== null
-                  ? filter.orderscount.toString()
+                {filterData && filterData.orders_count !== null
+                  ? filterData && filterData.orders_count?.toString()
                   : "Null"}
               </td>
               <td className="border-r border-black p-2">
-                {filter.emailcampaigncount !== null
-                  ? filter.email_campaigncount.toString()
+                {filterData && filterData.email_campaign_count !== null
+                  ? filterData && filterData.email_campaign_count?.toString()
                   : "Null"}
               </td>
               <td className="border-r border-black p-2">
-                {filter.buyboxcount !== null
-                  ? filter.buyboxcount.toString()
+                {filterData && filterData.buybox_count !== null
+                  ? filterData && filterData.buybox_count?.toString()
                   : "Null"}
               </td>
               <td className="border-r border-black p-2">
-                {filter.globalreviewscount !== null
-                  ? filter.globalreviewscount.toString()
+                {filterData && filterData.global_reviews_count !== null
+                  ? filterData && filterData.global_reviews_count?.toString()
                   : "Null"}
               </td>
               <td className="border-r border-black p-2">
-                {filter.pricetrackingcount !== null
-                  ? filter.pricetrackingcount.toString()
+                {filterData && filterData.price_tracking_count !== null
+                  ? filterData && filterData.price_tracking_count?.toString()
                   : "Null"}
               </td>
               <td className="border-r border-black p-2">
-                {filter.reviewratingcount !== null
-                  ? filter.reviewratingcount.toString()
+                {filterData && filterData.review_ratings_count !== null
+                  ? filterData && filterData.review_ratings_count?.toString()
                   : "Null"}
               </td>
               <td className="border-r border-black p-2">
-                {filter.inventorycount !== null
-                  ? filter.inventorycount.toString()
+                {filterData && filterData.inventory_count !== null
+                  ? filterData && filterData.inventory_count?.toString()
                   : "Null"}
               </td>
               <td className="p-2 flex items-center justify-center"></td>
             </tr>
-          ))}
+          {/* ))} */}
         </tbody>
       </table>
     </div>

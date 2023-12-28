@@ -83,7 +83,8 @@ function Home() {
 
   return detailButton ? (
     <Channel item={channelitems} />
-  ) : (
+  ) : viewButton ? 
+  <Filter item={filteritems} /> : (
     <div>
       <div className="">
         {/* ------  input-box   ----- */}

@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { ApiTable, BASEURL, METHOD } from "./Util/apiTable";
 
-const Handleaxios = async (event, value, searchinput) => {
+const Handleaxios = async (event, value, searchinput,countInput) => {
+    console.log(event, value, searchinput)
     try {
         // let axiosURL = `${BASEURL}${searchinput ? `/${searchinput}` : ''}${axiosvalue.label}${value ? `/${axiosCategory.label}` : ''}`;
 
@@ -10,8 +11,12 @@ const Handleaxios = async (event, value, searchinput) => {
             if (event === 'channel') {
 
                 axiosURL += `data/detail/${searchinput}`;
-            } else {
+            } 
+            if(searchinput) {
                 axiosURL += `data/${searchinput}`;
+            }
+            if(countInput){
+                axiosURL += `data/count/${countInput}`;
             }
         } else {
             if (event) {
