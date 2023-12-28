@@ -106,6 +106,10 @@ function Home() {
                                         <BsCaretUpFill className='ml-[220px] -mt-[25px] hover:shadow-lg  hover:shadow-blue-500' onClick={() => handleSort('ASC', 'returnslastsyncat')} />
                                         <BsCaretDownFill className='ml-[220px] hover:shadow:lg hover:shadow-red-500' onClick={() => handleSort('DESC', 'returnslastsyncat')} />
                                     </th>
+                                    <th className='p-2'>subscriptionend
+                                        <BsCaretUpFill className='ml-[220px] -mt-[25px] hover:shadow-lg  hover:shadow-blue-500' onClick={() => handleSort('ASC', 'subscriptionend')} />
+                                        <BsCaretDownFill className='ml-[220px] hover:shadow:lg hover:shadow-red-500' onClick={() => handleSort('DESC', 'subscriptionend')} />
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -117,9 +121,10 @@ function Home() {
                                         <td className='border-r border-black p-2'>{item.inventorylastsyncat || 'Null'}</td>
                                         <td className='border-r border-black p-2'>{item.orderslastsyncat || 'Null'}</td>
                                         <td className='border-r border-black p-2'>{item.paymentslastsyncat || 'Null'}</td>
-                                        <td className='p-2 flex items-center justify-center'>
-                                            {item.returnslastsyncat || 'Null'}
-                                            <button onClick={() => handleDetail(item)} className={item.returnslastsyncat ?
+                                        <td className='border-r border-black p-2'>{item.returnslastsyncat || 'Null'}</td>
+                                    <td className='p-2 flex items-center justify-center'>
+                                            {item.subscriptionenddate || 'Null'}
+                                            <button onClick={() => handleDetail(item)} className={item.subscriptionenddate ?
                                                 'border-gray-700 border-[1px] px-[10px] py-[1px] ml-[20px] rounded-md' :
                                                 'border-gray-700 border-[1px] px-[10px] py-[1px] ml-[180px] rounded-md'}>
                                                 Detail
