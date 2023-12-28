@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import Handleaxios from './handleaxios';
 
 function Channel(props) {
-    const [channelData, setChannelData] = useState([]);
+    const [channelData, setChannelData,] = useState([]);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const fetchData = async () => {
         try {
+            //if(channelData.length <= 0){
             let result = await Handleaxios('channel', null, props.item);
             console.log("channel-result: ", result.data)
-            setChannelData(result.data);
+            setChannelData([result.data]);
+            //}
         } catch (error) {
             console.error('Error fetching data in Channel:', error.message);
         }
@@ -17,7 +19,7 @@ function Channel(props) {
 
     useEffect(() => {
         fetchData();
-    }, [fetchData, props.item]);
+    }, [props.item]);
 
     return (
         <div>

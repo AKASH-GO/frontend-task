@@ -1,6 +1,6 @@
 export const ApiTable = {
     display: {
-        label: "data/"
+        label: "data?"
     },
     sortasc: {
         label: "data?sort=asc"
@@ -29,6 +29,12 @@ export const ApiTable = {
     returnslastsyncat: {
         label: "&column_name=returnslastsyncat"
     },
+    page:{
+        label:"&page=page"
+    },
+    count:{
+        label:"&count=count"
+    }
 }
 export const METHOD = "get"
-export const BASEURL = "https://3231-2405-201-e015-b09c-84fc-770c-9cfd-f166.ngrok-free.app/"
+export const BASEURL = "https://1adf-2405-201-e015-b09c-80ef-dd3e-5e96-ced.ngrok-free.app/"

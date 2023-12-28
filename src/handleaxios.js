@@ -21,8 +21,9 @@ const Handleaxios = async (event, value, searchinput) => {
                 axiosURL += 'data/'
             }
             if (value) {
-                const axiosCategory = ApiTable[value];
-                axiosURL += `${axiosCategory.label}`;
+                // const axiosCategory = ApiTable[value];
+                // axiosURL += `${axiosCategory.label}`;
+                axiosURL += `${value}`;
             }
         }
         axios.defaults.headers.common['ngrok-skip-browser-warning'] = "69420"
